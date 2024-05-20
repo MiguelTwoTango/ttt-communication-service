@@ -3,10 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MeetModule } from './meet/meet.module';
 import { MeetController } from './meet/meet.controller';
+import { ContactController } from './contact/contact.controller';
 import { MeetService } from './meet/meet.service';
 import { FirestoreModule } from './firestore/firestore.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailModule } from './mail/mail.module';
+import { ContactModule } from './contact/contact.module';
 
 
 @Module({
@@ -24,8 +26,9 @@ import { MailModule } from './mail/mail.module';
       inject: [ConfigService],
     }),
     MeetModule,
+    ContactModule,
     MailModule],
-  controllers: [AppController, MeetController],
+  controllers: [AppController, MeetController, ContactController],
   providers: [AppService, MeetService],
 })
 export class AppModule {}

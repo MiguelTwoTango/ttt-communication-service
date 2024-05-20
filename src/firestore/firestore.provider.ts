@@ -1,6 +1,7 @@
 // import { ChatDocument } from "src/documents/chats.document";
 // import { EventDocument } from "src/documents/events.document";
 import { MeetDocument } from "src/documents/meet.document";
+import { ContactDocument } from "src/documents/contact.document";
 import { ProfileDocument } from "src/documents/profile.document";
 // import { ProfileDocument } from "src/documents/profiles.document";
 // import { RegistrationDocument } from "src/documents/registrations.document";
@@ -8,6 +9,7 @@ import { ProfileDocument } from "src/documents/profile.document";
 export const FirestoreDatabaseProvider = 'firestoredb';
 export const FirestoreOptionsProvider = 'firestoreOptions'
 export const FirestoreCollectionProviders: string[] = [
-    MeetDocument.collectionName,
+    MeetDocument.collectionName, 
+    ContactDocument.collectionName,
     ProfileDocument.collectionName
 ];
