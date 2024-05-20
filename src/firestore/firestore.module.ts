@@ -25,7 +25,7 @@ export class FirestoreModule {
 
         const dbProvider = {
             provide: FirestoreDatabaseProvider,
-            useFactory: (config) => {new Firestore()},
+            useFactory: (config) => new Firestore(),
             inject: [FirestoreOptionsProvider],
         };
 
@@ -34,8 +34,6 @@ export class FirestoreModule {
             useFactory: (db) => db.collection(providerName),
             inject: [FirestoreDatabaseProvider],
         }));
-
-
 
         return {
             global: true,
