@@ -9,6 +9,7 @@ import { FirestoreModule } from './firestore/firestore.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailModule } from './mail/mail.module';
 import { ContactModule } from './contact/contact.module';
+import { ContactService } from './contact/contact.service';
 
 
 @Module({
@@ -29,6 +30,6 @@ import { ContactModule } from './contact/contact.module';
     ContactModule,
     MailModule],
   controllers: [AppController, MeetController, ContactController],
-  providers: [AppService, MeetService],
+  providers: [AppService, MeetService, ContactService],
 })
 export class AppModule {}

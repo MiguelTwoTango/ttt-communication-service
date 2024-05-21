@@ -34,6 +34,7 @@ export class ContactDocument {
 export class createContactDTO extends PartialType(
     OmitType(ContactDocument, ['receiverProfile', 'senderProfile'] as const)
 ) {
+    
     @IsNotEmpty()
     senderId: string;
 
@@ -74,6 +75,9 @@ export class createContactDTO extends PartialType(
 export class updateContactDTO extends PartialType(
     PickType(ContactDocument, ['status', 'acceptedAt', 'bCardReceived', 'bCardSeen', 'bCardSend', 'isReceiverFavorite', 'isSenderFavorite', 'matchScore', 'createdAt', 'updateAt'] as const)
 ) {
+    @IsNotEmpty()
+    id: string;
+    
     @IsOptional()
     status: string;
 

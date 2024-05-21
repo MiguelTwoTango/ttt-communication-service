@@ -27,6 +27,41 @@ export class ContactController {
         return this.contactService.createContact(contactDTO)
     }
 
+    @Put('/update')
+    async updateContact(
+        @Body() contactDTO: updateContactDTO
+    ) {
+        return this.contactService.updateContact(contactDTO)
+    }
+
+    @Put('/favoriteReciver')
+    async addFavoritReceiver(
+        @Body() contactDTO: updateContactDTO
+    ) {
+        return this.contactService.addFavoritReceiver(contactDTO)
+    }
+
+    @Put('/favoriteSender')
+    async addFavoritSender(
+        @Body() contactDTO: updateContactDTO
+    ) {
+        return this.contactService.addFavoritSender(contactDTO)
+    }
+
+    @Put('/deleteFavoriteReciver')
+    async deleteFavoriteReciver(
+        @Body() contactDTO: updateContactDTO
+    ) {
+        return this.contactService.deleteFavoriteReceiver(contactDTO)
+    }
+
+    @Put('/deleteFavoriteSender')
+    async deleteFavoriteSender(
+        @Body() contactDTO: updateContactDTO
+    ) {
+        return this.contactService.deleteFavoriteSender(contactDTO)
+    }
+
     @Delete('/delete/:contactId')
     async deleteContact(
         @Param() { contactId }: { contactId: string }
